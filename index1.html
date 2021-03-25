@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+	        margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div{
+            display: block;
+            
+        }
+        .header{
+            border: 1px solid black;
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 42px;
+            clear: both;
+            margin-bottom: 40px;
+            background-color: #f8f8fa;
+        }
+        .header > div {
+            display: inline;
+            height: 100%;
+            position: absolute;
+        }
+        .header li{
+            list-style: none;
+            padding: auto;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .title-left{
+            left: 0px;
+        }
+        .title{
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: auto;
+            text-align: center;
+            padding-top: 5px;
+        }
+        .title-right{
+            right: 0px;
+        }
+        .contents{
+            display: block;
+            width: 100%;
+            height: 700px;
+            
+        }
+        .size{
+            display: block;
+            position: relative;
+            width: 1100px;
+            height: 700px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        div.size > div{
+            
+            border: 1px solid black;
+            border-radius: 10%;
+            position: absolute;
+            width: 350px;
+            height: 450px;
+            display: inline-block;
+            
+        }
+        
+        button{
+            background-color: white;
+        }
+
+        .left-button{
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 200px;
+            left: 0px;
+        }
+        .right-button{
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 200px;
+            right: 0px;
+        }
+        #first{
+            background-color: cornflowerblue;
+            
+        }
+        #second{
+            background-color: rgba(206, 41, 41);
+            
+        }
+        #third{
+            background-color: rgb(16, 129, 54);
+            
+        }
+
+    </style>
+
+    <script>
+        let imgList=["first", "second", "third"];
+        
+
+        window.onload=function(){
+            
+            imgSelect();
+        }
+
+        function imgSelect(){
+            let ck = document.getElementsByClassName("size")[0].children;
+            
+            
+            for(let i=1; i<4; i++){
+
+                switch (i){//애니메이션 효과 이후 초기화 키 프레임
+                    case 1 :
+                        ck[i].style.zIndex='1';
+                        ck[i].style.left='75px';
+                        ck[i].style.right='none';
+                        ck[i].style.marginRight='none';
+                        ck[i].style.marginLeft='none';
+                        
+                        break;
+                    case 2 :
+                        ck[i].style.zIndex='2';
+                        ck[i].style.top='150px';
+                        ck[i].style.left='0';
+                        ck[i].style.right='0';
+                        ck[i].style.marginRight='auto';
+                        ck[i].style.marginLeft='auto';
+                        break;
+
+                    case 3 :
+                        ck[i].style.zIndex='1';
+                        ck[i].style.left='none';
+                        ck[i].style.right='75px';
+                        ck[i].style.marginRight='none';
+                        ck[i].style.marginLeft='none';
+                        break;
+                }
+                ck[i].id=imgList[i-1];
+            }
+            
+        };
+
+        function button_left(){
+            let temp = imgList[0];
+            
+            for(let i=0; i<2; i++){
+                imgList[i]=imgList[i+1];
+            }
+            imgList[2]=temp;
+            imgSelect();
+        };
+        function button_right(){
+            let temp = imgList[2];
+            
+            for(let i=2; i>=1; i--){
+                imgList[i]=imgList[i-1];
+            }
+            imgList[0]=temp;
+            
+            imgSelect();
+        };
+    </script>
+    
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="title-left">
+                menu
+            </div>
+            <div class="title">
+                졸업그게뭐조
+            </div>
+            <div class="title-right">
+                <li><a>로그인</a></li>
+                <li><a>회원가입</a></li>
+            </div>
+        </div>
+
+        <div class="contents">
+            
+            <div class="size" id="select">
+                <button class="left-button" onclick="button_left();"></button>
+                <div class="photo-left"></div>
+                
+                <div class="photo"></div>
+                <div class="photo-right"></div>
+                <button class="right-button" onclick="button_right();"></button>
+            </div>
+            
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+</html>
