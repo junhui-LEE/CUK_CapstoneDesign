@@ -13,10 +13,57 @@
       center: new naver.  maps.LatLng(37.3595704, 127.105399),
       zoom: 15
   });
-
+  //심각성 : 3
+/*
   var marker = new naver.maps.Marker({
       position: new naver.maps.LatLng(37.3595704, 127.105399),
-      map: map
+      map: map,
+      title: '사기',
+      icon: {
+        content: [
+          '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px; background-color:#d3cc07; color:white; text-align:center; border:1px solid #a09b07; border-radius:14px; opacity:75%">'+
+          '<div style="font-weight:bold; font-size:14px">사기</div>'+
+          '<div style="font-weight:normal; font-size:13px; margin-top:3px">2016-01-21<br/>09시 13분</div>'+
+          '</div>'
+        ].join(''),
+        size:new naver.maps.Size(38,58),
+        anchor: new naver.maps.Point(19,58),
+      }
+  });*/
+  //심각성 :2
+  /*
+  var marker = new naver.maps.Marker({
+    position: new naver.mamps.LatLng(37.3595704, 127.105399),
+    map:map,
+    title:'강도',
+    icon: {
+      content:[
+        '<div style="padding-top:5px; padding-bottom:5px; paddign-left:5px; padding-right:5px; background-color:#e0692f; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%">'+
+        '<div style="font-weight:bold; font-size:14px">강도</div>'+
+        '<div styel="font-weight:normal; font-size:13px; margin-top:3px">2015-04-21<br/>08 43분</div>'+
+        '</div>'
+      ].join(''),
+      size: new naver.maps.Size(38, 58),
+      anchor: new naver.maps.Point(19,58),
+    },
+    draggable: false
   });
-
+  */
+  // 심각성 : 1
+  var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.3595704, 127.105399),
+    map: map,
+    title: '살인',
+    icon: {
+      content: [
+        '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px padding-right:5px; background-color:#b12121; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%">'+
+        '<div style="font-weight:bold; font-size:14px">살인</div>'+
+        '<div style="font-weight:normal; font-size:13px; margin-top:3px">2015-03-01<br/>20시 50분</div>'+
+        '</div>'
+      ].join(''),
+      size: new naver.maps.Size(38,58),
+      anchor: new naver.maps.Point(19,58),
+    },
+    draggable: false
+  });
 </script>
