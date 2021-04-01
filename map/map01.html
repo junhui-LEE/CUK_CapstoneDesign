@@ -1,7 +1,10 @@
-<head>
-  <script src="jquery-1.10.1.min.js"></script>
-  <script type="text/javascript" src="//openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=holwgz2g62"></script>
-</head>
+
+<!--      <head>
+        <script src="jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="//openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=holwgz2g62"></script>
+    </head>
+-->
+
 <body>
   <div id="map" style="width: 1000px; height:500px; margin-top:40px">
   </div>
@@ -15,6 +18,9 @@
       center: new naver.  maps.LatLng(37.3595704, 127.105399),
       zoom: 15
   });
+
+
+  /*
   function CustomMarker(lat, lng, crimeID, crimeGubun, serious, crimeDate, crimeTime){
     // 심각성 :1
     var contents_html="";
@@ -65,6 +71,9 @@
     $("#"+childID).show();
   }
 
+*/
+
+
   //심각성 : 3
 /*
   var marker = new naver.maps.Marker({
@@ -102,7 +111,7 @@
   });
   */
   // 심각성 : 1
-  /*
+
   var marker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3595704, 127.105399),
     map: map,
@@ -111,7 +120,7 @@
       content: [
         '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px padding-right:5px; background-color:#b12121; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%">'+
         '<div style="font-weight:bold; font-size:14px">살인</div>'+
-        '<div style="font-weight:normal; font-size:13px; margin-top:3px">2015-03-01<br/>20시 50분</div>'+
+        '<div style="font-weight:normal; font-size:13px; margin-top:3px display:none">2015-03-01<br/>20시 50분</div>'+
         '</div>'
       ].join(''),
       size: new naver.maps.Size(38,58),
@@ -119,5 +128,5 @@
     },
     draggable: false
   });
-  */
+
 </script>
