@@ -1,17 +1,11 @@
 
-<head>
-  <script src="jquery-1.10.1.min.js"></script>
-  <script type="text/javascript" src="//openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=holwgz2g62"></script>
-</head>
-
-
 <body>
 
   <div id="map" style="width: 1000px; height:500px; margin-top:40px">
   </div>
 </body>
 
-
+<script type="text/javascript" src="//openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=holwgz2g62"></script>
 <script>
   //지도를 삽입할 HTML 요소 또는 HTML 요소의 id를 지정합니다.
   var mapDiv = document.getElementById('map'); // 'map'으로 선언해도 동일
@@ -21,122 +15,5 @@
       center: new naver.  maps.LatLng(37.3595704, 127.105399),
       zoom: 15
   });
-
-
-  /*
-  function CustomMarker(lat, lng, crimeID, crimeGubun, serious, crimeDate, crimeTime){
-    // 심각성 :1
-    var contents_html="";
-    if(serious == 1){
-      contents_html='<div style="padding-top:5px; padding-bottom:5px; padding-left:5px; padding-rignt:5px; background-color:#b12121; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%" onmouseover="javascript:overCrime(\''+crimeID+'\');" onmouseout="javascript:outCrime(\''+crimeID+'\');">'+
-      '<div style="font-weight:bold; font-size:14px">'+crimeGubun+'</div>'+
-      '<div style="font-weight:normal; font-size:13px; margin-top:3px; display:none" id="'+crimeID+'">'+crimeDate+'<br/>'+crimeTime+'</div>'+
-      '</div>';
-    }
-
-    // 심각성 : 2
-    if(serious == 2){
-      contents_html = '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right5px; background-color:#e0692f; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%" onmouseover="javascript:overCrime(\''+crimeID+'\');" onmouseout="javascript:outCrime(\''+crimeID+'\');">'+
-      '<div style="font-weight:bold; font-size:14px">'+crimeGubun+'</div>'+
-      '<div style="font-weight:normal; font-size:13px; margin-top:3px display:none" id="'+crimeID+'">'+crimeDate+'<br/>'+crimeTime+'</div>'+
-      '</div>';
-    }
-
-    //심각성 : 3
-    if(serious == 3){
-      contents_html = '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px; background-color:#d3cc07; color:white; text-align:center; border:1px solid #a09b07; border-radius:14px; opacity:75%" onmouseover="javascript:overCrime(\''+crimeID+'\');" onmouseout="javascript:outCrime(\''+crimeID+'\');">'+
-      '<div style="font-weight:bold; font-size:14px">'+crimeGubun+'</div>'+
-      '<div style="font-weight:normal; font-size:13px; margin-top:3px display:none" id="'+crimeID'">'+crimeDate+'<br/>'+crimeTime+'</div>'+
-      '</div>';
-    }
-
-    var marker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(lat, lng),
-      map: map,
-      title: crimeGubun,
-      icon: {
-        content: content_html,
-        size: new naver.maps.Size(38, 58),
-        anchor: new naver.maps.Point(19, 58),
-      },
-      draggable: false
-    });
-    return marker;
-  };
-  var marker = new CustomMarker(37.3595704, 127.105399,"crime1","살인", 1, "2019-03-01", "14:21:00");
-  var marker2 = new CustomMarker(37.3595704, 127.105399,"crime2","강도", 2, "2019-04-03", "09:33:00");
-  var marker3 = new CustomMarker(37.3595704, 127.105399,"crime3","사기", 3, "2020-06-13", "19:47:00");
-
-  function overCrime(childID){
-    $("#"+childID).show();
-  }
-  function outCrime(childID){
-    $("#"+childID).show();
-  }
-
-*/
-
-/*
-  //심각성 : 3
-// 사기는 정상적으로 마커 표시 된다.
-  var marker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(37.3595704, 127.105399),
-      map: map,
-      title: '사기',
-      icon: {
-        content: [
-          '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px; background-color:#d3cc07; color:white; text-align:center; border:1px solid #a09b07; border-radius:14px; opacity:75%">'+
-          '<div style="font-weight:bold; font-size:14px">사기</div>'+
-          '<div style="font-weight:normal; font-size:13px; margin-top:3px">2016-01-21<br/>09시 13분</div>'+
-          '</div>'
-        ].join(''),
-        size:new naver.maps.Size(38,58),
-        anchor: new naver.maps.Point(19,58),
-      }
-  });
-*/
-
-  //심각성 :2
-/*
-  var marker = new naver.maps.Marker({
-    position: new naver.mamps.LatLng(37.3595704, 127.105399),
-    map:map,
-    title:'강도',
-    icon: {
-      content:[
-        '<div style="padding-top:5px; padding-bottom:5px; paddign-left:5px; padding-right:5px; background-color:#e0692f; color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%">'+
-        '<div style="font-weight:bold; font-size:14px">강도</div>'+
-        '<div styel="font-weight:normal; font-size:13px; margin-top:3px">2015-04-21<br/>08 43분</div>'+
-        '</div>'
-      ].join(''),
-      size: new naver.maps.Size(38, 58),
-      anchor: new naver.maps.Point(19,58),
-    },
-    draggable: false
-  });
-*/
-  // 심각성 : 1
-
-  var marker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3595704, 127.105399),
-    map: map,
-    title: '살인',
-    icon: {
-      content: [
-        '<div style="padding-top:5px; padding-bottom:5px; padding-left:5px padding-right:5px; background-color:#b12121;
-         color:white; text-align:center; border:1px solid #831616; border-radius:14px; opacity:75%" onmouseover="javascript:overCrime(\'crime3\');">'+
-        '<div style="font-weight:bold; font-size:14px">살인</div>'+
-        '<div id="crime3" style="font-weight:normal; font-size:13px; margin-top:3px; display:none">2015-03-01<br/>20시 50분</div>'+
-        '</div>'
-      ].join(''),
-      size: new naver.maps.Size(38,58),
-      anchor: new naver.maps.Point(19,58),
-    },
-    draggable: false
-  });
-
-  function overCrime(childID){
-    $("#"+childID).show();
-  }
 
 </script>
